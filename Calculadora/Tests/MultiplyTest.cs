@@ -4,15 +4,15 @@ using System.Collections.Generic;
 namespace Calculadora.Tests
 {
     [TestClass]
-    internal class MultiplyTest
+    public class MultiplyTest
     {
-        public static IEnumerable<object[]> AdditionData
+        public static IEnumerable<object[]> MultiplyData
         {
             get
             {
                 return new[]
                 {
-                    new object[] { 2, 1, 2 },
+                    new object[] { 8, 1, 8 },
                     new object[] { -3, -2, 6 },
                     new object[] { 7, -3, -21 },
                     new object[] { -12, 8, -96 },
@@ -26,13 +26,12 @@ namespace Calculadora.Tests
         }
 
         [TestMethod]
-
-        [DynamicData(nameof(AdditionData))]
-        public void VerifyMultiplytOfTwoIntegerNumbers(int firstNumber, int secondNumber, int expectedMultiply)
+        [DynamicData(nameof(MultiplyData))]
+        public void VerifyMultiplyOfTwoIntegerNumbers(int firstNumber, int secondNumber, int expectedMultiply)
         {
             var resultOfMultiply = new Multiply(firstNumber, secondNumber).Perform();
             Assert.AreEqual(expectedMultiply, resultOfMultiply, $"The Expected result of Multiply should be {expectedMultiply} But it was: {resultOfMultiply}");
         }
-    }
+    } 
 }
     
