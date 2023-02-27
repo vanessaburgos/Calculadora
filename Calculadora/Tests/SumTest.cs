@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Calculadora.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 
 namespace Calculadora.Tests
 {
@@ -8,20 +10,9 @@ namespace Calculadora.Tests
     {
         public static IEnumerable<object[]> SumData
         {
-            get 
+            get
             {
-                return new[]
-                {
-                    new object[] {1, 2, 3 },
-                    new object[] {-2, -3, -5 },
-                    new object[] {-7, -3, -10 },
-                    new object[] { 12, -8, 4},
-                    new object[] { 0, 1, 1},
-                    new object[] { 9, 0, 9},
-                    new object[] {-9, 0, -9},
-                    new object[] { 0, -6, -6},
-                    new object[] { 0, 0, 0},
-                };
+                return OperationHelper.GetSumAdditionalData();
             }
         }
 

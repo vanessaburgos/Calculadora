@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Calculadora.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace Calculadora.Tests
@@ -10,15 +11,7 @@ namespace Calculadora.Tests
         {
             get
             {
-                return new[]
-                {
-                    new object[] { 22, 2, 11 },
-                    new object[] { -10, -5, 2 },
-                    new object[] { 30, -3, -10},
-                    new object[] { -12, 6, -2 },
-                    new object[] { 0, 6, 0 },
-                    new object[] { 0, -8, 0 },
-                };
+                return OperationHelper.GetDivideAdditionalData();
             }
         }
 

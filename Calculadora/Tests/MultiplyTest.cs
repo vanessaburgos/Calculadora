@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Calculadora.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace Calculadora.Tests
@@ -10,18 +11,7 @@ namespace Calculadora.Tests
         {
             get
             {
-                return new[]
-                {
-                    new object[] { 8, 1, 8 },
-                    new object[] { -3, -2, 6 },
-                    new object[] { 7, -3, -21 },
-                    new object[] { -12, 8, -96 },
-                    new object[] { 0, 1, 0 },
-                    new object[] { 9, 0, 0 },
-                    new object[] { -9, 0, 0 },
-                    new object[] { 0, -6, 0 },
-                    new object[] { 0, 0, 0 },
-                };
+                return OperationHelper.GetMultiplyAdditionalData();
             }
         }
 
@@ -32,6 +22,6 @@ namespace Calculadora.Tests
             var resultOfMultiply = new Multiply(firstNumber, secondNumber).Perform();
             Assert.AreEqual(expectedMultiply, resultOfMultiply, $"The Expected result of Multiply should be {expectedMultiply} But it was: {resultOfMultiply}");
         }
-    } 
+    }
 }
     

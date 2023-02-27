@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Calculadora.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace Calculadora.Tests
@@ -10,21 +11,10 @@ namespace Calculadora.Tests
         {
             get
             {
-                return new[]
-                {
-                    new object[] { 4, 1, 3 },
-                    new object[] { -3, -2, -1 },
-                    new object[] { 7, -3, 10 },
-                    new object[] { -12, 8, -20 },
-                    new object[] { 0, 1, -1 },
-                    new object[] { 9, 0, 9 },
-                    new object[] { -9, 0, -9 },
-                    new object[] { 0, -6, 6 },
-                    new object[] { 0, 0, 0 },
-                };
+                return OperationHelper.GetSubstractAdditionalData();
             }
         }
-        
+
         [TestMethod]
         [DynamicData(nameof(SubstractData))]
         public void VerifySubstractOfTwoIntegerNumbers(int firstNumber, int secondNumber, int expectedSubstract)
