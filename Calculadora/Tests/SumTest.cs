@@ -1,7 +1,6 @@
 ﻿using Calculadora.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
 
 namespace Calculadora.Tests
 {
@@ -18,11 +17,10 @@ namespace Calculadora.Tests
 
         [TestMethod]
         [DynamicData(nameof(SumData))]
-        public void VerifySumOfTwoIntegerNumbers(int firstNumber, int secondNumber, int expectedSum)
+        public void VerifySumOfTwoIntegerNumbers(int id, string firstNumber, string secondNumber, string expectedSum)
         {
-            var resultOfSum = new Sum(firstNumber, secondNumber).Perform();
-
-            Assert.AreEqual(expectedSum, resultOfSum, $"The Expected result of Sum should be {expectedSum} But it was: {resultOfSum}");
+            var resultOfSum = new Sum(int.Parse(firstNumber), int.Parse(secondNumber)).Perform();
+            Assert.AreEqual(int.Parse(expectedSum), resultOfSum, $"The Expected result of Sum should be {expectedSum} But it was: {resultOfSum}");
         }
     }
 }

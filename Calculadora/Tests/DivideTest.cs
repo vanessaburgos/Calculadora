@@ -17,10 +17,10 @@ namespace Calculadora.Tests
 
         [TestMethod]
         [DynamicData(nameof(DivideData))]
-        public void VerifyDivideOfTwoIntegerNumbers(int firstNumber, int secondNumber, int expectedDivide)
+        public void VerifyDivideOfTwoIntegerNumbers(int id, string firstNumber, string secondNumber, string expectedDivide)
         {
-            var resultOfDivide = new Divide(firstNumber, secondNumber).Perform();
-            Assert.AreEqual(expectedDivide, resultOfDivide, $"The Expected result of Divide should be {expectedDivide} But it was: {resultOfDivide}");
+            var resultOfDivide = new Divide(int.Parse(firstNumber), int.Parse(secondNumber)).Perform();
+            Assert.AreEqual(int.Parse(expectedDivide), resultOfDivide, $"The Expected result of Divide should be {expectedDivide} But it was: {resultOfDivide}");
         }
     }
 }
