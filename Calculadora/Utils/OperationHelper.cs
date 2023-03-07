@@ -104,5 +104,7 @@ namespace Calculadora.Utils
                 return tableData;
             }
         }
+
+
     }
 }
